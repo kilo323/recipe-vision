@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipe Vision</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="intro">
+        <p class="eyebrow">RECIPE VISION</p>
+        <h1>Turn a recipe photo into structured data.</h1>
+        <p class="lede">Upload a recipe image or PDF. The vision model will extract it as validated schema.org Recipe JSON-LD.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="upload-title">
+        <h2 id="upload-title">Upload a recipe</h2>
+        <form id="upload-form">
+          <label class="dropzone" for="recipe-file">
+            <span class="upload-icon" aria-hidden="true">↑</span>
+            <span id="file-label">Choose an image or PDF</span>
+            <span class="hint">PNG, JPEG, WebP, or PDF · up to {{ max_upload_mb }} MB</span>
+          </label>
+          <input id="recipe-file" name="file" type="file" accept="image/*,application/pdf,.pdf" required>
+          <button id="submit-button" type="submit">Extract recipe</button>
+        </form>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="result-section" class="panel result" hidden aria-labelledby="result-title">
+        <div class="result-heading">
+          <h2 id="result-title">Extracted recipe</h2>
+          <button id="download-button" class="secondary" type="button">Download JSON</button>
+        </div>
+        <div id="recipe-view"></div>
+        <details>
+          <summary>View JSON-LD</summary>
+          <pre id="json-output"></pre>
+        </details>
+      </section>
+      <footer>Recipes are extracted by your configured vision model. Review the result before relying on it.</footer>
+    </main>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

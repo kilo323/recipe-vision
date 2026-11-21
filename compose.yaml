@@ -1,0 +1,15 @@
+services:
+  recipe-vision:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"
+    container_name: recipe-vision
+    environment:
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-http://host.docker.internal:8000/v1}
+      OPENAI_MODEL: ${OPENAI_MODEL:-qwen3-vl}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      MAX_UPLOAD_BYTES: ${MAX_UPLOAD_BYTES:-15728640}
+      MAX_PDF_PAGES: ${MAX_PDF_PAGES:-10}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

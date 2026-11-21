@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  "name": "Slow Cooker Pork Chops",
+  "recipeIngredient": [
+    "1/2 cup all-purpose flour",
+    "1/2 tsp. seasoned salt",
+    "1/2 tsp. ground black pepper",
+    "1/4 tsp. cayenne pepper, optional",
+    "1/2 tsp. chopped, fresh thyme leaves, plus more for garnish",
+    "2 Tbsp. vegetable oil",
+    "1 Tbsp. butter",
+    "8 1-inch thick boneless pork loin chops (about 3lbs)",
+    "1 large onion, sliced",
+    "1 10.75 oz. can cream of mushroom soup",
+    "1 1/4 cups chicken broth",
+    "3 Tbsp. Worcestershire sauce",
+    "4 sprigs fresh thyme",
+    "Cooked egg noodles or mashed potatoes, for serving"
+  ],
+  "recipeInstructions": [
+    {
+      "@type": "HowToStep",
+      "text": "In a pie plate, whisk together the flour, salt, pepper, cayenne and thyme leaves. Dredge each side of the pork chops in the flour mixture, then set aside on a plate."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Heat the oil and butter in a large skillet over medium-high heat. Add the pork chops to the pan (work in two batches if the need be) and cook for 3 minutes on each side. Remove them to a plate."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add the onions to the skillet and cook for about 5 minutes, until lightly golden and slightly softened. Remove from the heat."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Add the cream of mushroom soup, chicken broth and Worcestershire sauce to the base of a 6- to 8-quart slow cooker. Whisk everything to combine. Add the onions and thyme sprigs, the nestle the pork chops into the broth mixture. Cover and cook over high heat for 1 hour, then reduce to low heat for 2 more hours, until tender. Serve the pork chops with some of the gravy, onions, and a sprinkle of fresh thyme leaves, over cooked egg noodles or mashed potatoes, if you like."
+    }
+  ],
+  "prepTime": "PT15M",
+  "cookTime": "PT3H15M",
+  "totalTime": "PT3H15M",
+  "yield": "6 - 8 serving(s)"
+}
