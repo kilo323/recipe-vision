@@ -46,9 +46,22 @@ URL is `http://localhost:8000/v1`.
 | `OPENAI_BASE_URL` | `http://localhost:8000/v1` | OpenAI-compatible API base URL |
 | `OPENAI_MODEL` | `qwen3-vl` | Vision model name |
 | `OPENAI_API_KEY` | unset | Optional API key; sent as a bearer token when set |
+| `MEALIE_URL` | unset | Mealie base URL, for example `https://mealie.example.com` |
+| `MEALIE_API_TOKEN` | unset | Long-lived Mealie API token for direct imports |
 | `MAX_UPLOAD_BYTES` | `15728640` | Maximum upload size in bytes (15 MiB) |
 | `MAX_PDF_PAGES` | `10` | Maximum number of PDF pages sent to the model |
 | `PORT` | `8000` | Host port published by Docker Compose |
+
+## Mealie integration
+
+Set `MEALIE_URL` to the public base URL of your Mealie instance and
+`MEALIE_API_TOKEN` to a long-lived token from the Mealie user's API token page.
+For Docker Compose, add both values to `.env`.
+
+After extraction, edit the preview fields and choose **Import into Mealie**. The
+app validates and submits the edited JSON-LD through Mealie's recipe API, then
+opens the created recipe in edit mode in a new tab for Mealie-specific
+ingredient and unit matching.
 
 Uploaded files are processed in memory and are not saved by the app. Image and
 PDF pages are normalized to PNG before being sent to the configured model.

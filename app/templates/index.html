@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recipe Vision</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/style.css?v=2">
   </head>
   <body>
     <main class="shell">
@@ -31,9 +31,14 @@
       <section id="result-section" class="panel result" hidden aria-labelledby="result-title">
         <div class="result-heading">
           <h2 id="result-title">Extracted recipe</h2>
-          <button id="download-button" class="secondary" type="button">Download JSON</button>
+          <div class="result-actions">
+            <button id="download-button" class="secondary" type="button">Download JSON</button>
+            <button id="mealie-button" type="button">Import into Mealie</button>
+          </div>
         </div>
+        <p class="edit-hint">Click any name, description, time, ingredient, or instruction to edit it.</p>
         <div id="recipe-view"></div>
+        <p id="import-status" class="status" role="status" aria-live="polite"></p>
         <details>
           <summary>View JSON-LD</summary>
           <pre id="json-output"></pre>
@@ -41,6 +46,6 @@
       </section>
       <footer>Recipes are extracted by your configured vision model. Review the result before relying on it.</footer>
     </main>
-    <script src="/static/app.js" defer></script>
+    <script src="/static/app.js?v=2" defer></script>
   </body>
 </html>

@@ -8,6 +8,8 @@ services:
       OPENAI_BASE_URL: ${OPENAI_BASE_URL:-http://host.docker.internal:8000/v1}
       OPENAI_MODEL: ${OPENAI_MODEL:-qwen3-vl}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      MEALIE_URL: ${MEALIE_URL:-}
+      MEALIE_API_TOKEN: ${MEALIE_API_TOKEN:-}
       MAX_UPLOAD_BYTES: ${MAX_UPLOAD_BYTES:-15728640}
       MAX_PDF_PAGES: ${MAX_PDF_PAGES:-10}
     extra_hosts:

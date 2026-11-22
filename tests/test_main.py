@@ -41,3 +41,22 @@ def test_upload_endpoint_rejects_unsupported_file():
 
     assert response.status_code == 422
     assert "image or a PDF" in response.json()["detail"]
+
+
+def test_mealie_import_requires_configuration(monkeypatch):
+    monkeypatch.delenv("MEALIE_URL", raising=False)
+    monkeypatch.delenv("MEALIE_API_TOKEN", raising=False)
+
+    response = TestClient(main.app).post(
+        "/api/mealie/import",
+        json={
+            "@context": "https://schema.org",
+            "@type": "Recipe",
+            "name": "Soup",
+            "recipeIngredient": ["water"],
+            "recipeInstructions": [{"@type": "HowToStep", "text": "Boil."}],
+        },
+    )
+
+    assert response.status_code == 503
+    assert "MEALIE_URL" in response.json()["detail"]
